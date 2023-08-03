@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    td {
+        border-bottom: 1px solid black;
+        padding: 5px 70px;
+    }
+</style>
+
+<body>
+    <form action="">
+        <input type="number">
+        <button type="submit">Print</button>
+    </form>
+    <table>
+
+    </table>
+
+    <script>
+        let input = document.querySelector("input")
+        let btn = document.querySelector("button")
+        let table = document.querySelector("table")
+
+        btn.onclick = (e) => {
+            table.innerHTML = " "
+            e.preventDefault()
+            if (input.value.length > 0) {
+                let th1 = document.createElement("th")
+                th1.innerHTML = "Multyplayer"
+                table.appendChild(th1)
+                let th2 = document.createElement("th")
+                th2.innerHTML = "result"
+                table.appendChild(th2)
+                // console.log(input.value)
+
+                for (let i = 1; i <= 10; i++) {
+                    let tr1 = document.createElement("tr")
+                    let td1 = document.createElement("td")
+                    let td2 = document.createElement("td")
+                    td2.innerHTML = i * input.value
+                    td1.innerHTML = i
+                    table.appendChild(tr1)
+                    tr1.appendChild(td1)
+                    tr1.appendChild(td2)
+
+
+                }
+            }
+            else {
+                alert("Plase Enter valid Number")
+            }
+
+        }
+    </script>
+</body>
+
+</html>
